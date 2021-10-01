@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger X</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .hamburger{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+            flex-direction: column;
+            background-color: black;
+        }
+        .line{
+            margin: 3px;
+            width: 70px;
+            height:5px;
+            background-color: rgb(255, 255, 255);
+            transition: 0.5s all ease-in;
+        }
+
+        .line1{
+            transform: rotate(45deg) translate(0px, 15px);
+        }
+        .line3{
+            transform: rotate(-45deg) translate(0px, -15px);
+        }
+        .line2{
+            transform: translateX(-50px);
+            background: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <script>
+        let open = false
+        document.querySelector('.hamburger').addEventListener('click', ()=>{
+            if(!open){
+               document.getElementsByClassName('line')[0].classList.add('line1')
+               document.getElementsByClassName('line')[1].classList.add('line2')
+               document.getElementsByClassName('line')[2].classList.add('line3')
+               open = true
+            }else{
+
+                document.getElementsByClassName('line')[0].classList.remove('line1')
+               document.getElementsByClassName('line')[1].classList.remove('line2')
+               document.getElementsByClassName('line')[2].classList.remove('line3')
+               open = false
+            }
+        })
+    </script>
+</body>
+</html>
